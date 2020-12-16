@@ -1,0 +1,45 @@
+﻿@model IEnumerable<laba9.Models.Readers>
+
+@{
+    ViewBag.Title = "Читатели";
+}
+
+<h2>Читатели</h2>
+
+<p>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Фамилия
+        </th>
+        <th>
+            Дата рождения
+        </th>
+        <th>
+            Пасспорт
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.r_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.r_fio)
+        </td>
+        <td>
+            @item.r_dt_birth.ToShortDateString()
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.r_passport)
+        </td>
+    </tr>
+}
+
+</table>
